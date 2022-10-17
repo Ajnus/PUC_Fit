@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:puc_fit/login01.dart';
-import 'package:puc_fit/login03.dart';
+import 'package:puc_fit/gender_male.dart';
 import 'package:puc_fit/main.dart';
-import 'package:puc_fit/splash02.dart';
+import 'package:puc_fit/focus_empty.dart';
 
-class Sign02 extends StatelessWidget {
-  const Sign02({super.key});
+class GenderScreenFemale extends StatelessWidget {
+  const GenderScreenFemale({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +37,32 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/02-Sign Screen.png"),
+              image: AssetImage("assets/sexo/sexo_f.png"),
               fit: BoxFit.fill,
             ),
           ),
         ),
         Positioned(
+          left: MediaQuery.of(context).size.width / 2 - 74,
+          top: MediaQuery.of(context).size.height / 2 - 103,
+          child: SizedBox(
+            width: 150.0,
+            height: 150.0,
+            child: TextButton(
+              child: const Text(''),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const GenderScreenMale()),
+                );
+              },
+            ),
+          ),
+        ),
+        Positioned(
           left: 15,
-          bottom: MediaQuery.of(context).size.height / 2 - 330,
+          bottom: 66,
           child: SizedBox(
             width: MediaQuery.of(context).size.width - 30,
             height: 55.0,
@@ -54,7 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Login03()),
+                  MaterialPageRoute(
+                      builder: (context) => const RegistrationFocus()),
                 );
               },
             ),

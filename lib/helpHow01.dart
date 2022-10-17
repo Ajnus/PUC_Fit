@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:puc_fit/login01.dart';
-import 'package:puc_fit/login03.dart';
+import 'package:puc_fit/mainScreen.dart';
 import 'package:puc_fit/main.dart';
 import 'package:puc_fit/splash02.dart';
 
-class Sign02 extends StatelessWidget {
-  const Sign02({super.key});
+class HelpHow extends StatelessWidget {
+  const HelpHow({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +37,14 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/02-Sign Screen.png"),
-              fit: BoxFit.fill,
+              image: AssetImage("assets/06-Help-Screen.jpg"),
+              fit: BoxFit.cover,
             ),
           ),
         ),
         Positioned(
           left: 15,
-          bottom: MediaQuery.of(context).size.height / 2 - 330,
+          bottom: MediaQuery.of(context).size.height / 2 - 389,
           child: SizedBox(
             width: MediaQuery.of(context).size.width - 30,
             height: 55.0,
@@ -54,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Login03()),
+                  MaterialPageRoute(builder: (context) => const MainScreen()),
                 );
               },
             ),

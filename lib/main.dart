@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:puc_fit/sign02.dart';
 import 'package:puc_fit/splash02.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      systemNavigationBarColor:
+          SystemUiOverlayStyle.dark.systemNavigationBarColor,
+    ),
+  );
   runApp(const MyApp());
 }
 
@@ -47,8 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         Align(
           alignment: Alignment.bottomRight,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(primary: Colors.transparent),
+          child: TextButton(
             child: const Text(''),
             onPressed: () {
               Navigator.push(
@@ -60,8 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         Align(
           alignment: Alignment.bottomLeft,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(primary: Colors.transparent),
+          child: TextButton(
             child: const Text(''),
             onPressed: () {
               Navigator.push(

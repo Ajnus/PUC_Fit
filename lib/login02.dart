@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:puc_fit/login01.dart';
 import 'package:puc_fit/login03.dart';
 import 'package:puc_fit/main.dart';
 import 'package:puc_fit/splash02.dart';
 
-class Sign02 extends StatelessWidget {
-  const Sign02({super.key});
+class Login02 extends StatelessWidget {
+  const Login02({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +37,14 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/02-Sign Screen.png"),
-              fit: BoxFit.fill,
+              image: AssetImage("assets/04-login-Screen.jpg"),
+              fit: BoxFit.cover,
             ),
           ),
         ),
         Positioned(
           left: 15,
-          bottom: MediaQuery.of(context).size.height / 2 - 330,
+          bottom: MediaQuery.of(context).size.height / 2 - 235,
           child: SizedBox(
             width: MediaQuery.of(context).size.width - 30,
             height: 55.0,

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:puc_fit/login01.dart';
-import 'package:puc_fit/login03.dart';
+import 'package:puc_fit/gender01.dart';
+import 'package:puc_fit/gender01.dart';
+import 'package:puc_fit/login02.dart';
 import 'package:puc_fit/main.dart';
 import 'package:puc_fit/splash02.dart';
+import 'package:flutter_login/flutter_login.dart';
+import 'package:flutter/services.dart';
 
-class Sign02 extends StatelessWidget {
-  const Sign02({super.key});
+class Login01 extends StatelessWidget {
+  const Login01({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +41,14 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/02-Sign Screen.png"),
-              fit: BoxFit.fill,
+              image: AssetImage("assets/03-login-Screen.jpg"),
+              fit: BoxFit.cover,
             ),
           ),
         ),
         Positioned(
           left: 15,
-          bottom: MediaQuery.of(context).size.height / 2 - 330,
+          bottom: MediaQuery.of(context).size.height / 2 - 235,
           child: SizedBox(
             width: MediaQuery.of(context).size.width - 30,
             height: 55.0,
@@ -54,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Login03()),
+                  MaterialPageRoute(builder: (context) => const Login02()),
                 );
               },
             ),

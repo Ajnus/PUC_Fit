@@ -44,8 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         Align(
           alignment: Alignment.bottomRight,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(primary: Colors.transparent),
+          child: TextButton(
             child: const Text(''),
             onPressed: () {
               Navigator.push(
@@ -57,8 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         Align(
           alignment: Alignment.bottomLeft,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(primary: Colors.transparent),
+          child: TextButton(
             child: const Text(''),
             onPressed: () {
               Navigator.push(
