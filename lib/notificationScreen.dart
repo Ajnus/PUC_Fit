@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:puc_fit/helpHow01.dart';
-import 'package:puc_fit/main.dart';
-import 'package:puc_fit/splash02.dart';
 
-class Gender01 extends StatelessWidget {
-  const Gender01({super.key});
+class NotificationScreen extends StatelessWidget {
+  const NotificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +18,7 @@ class Gender01 extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
+  final String appBarText = 'Notifications';
   final String title;
 
   @override
@@ -37,28 +34,11 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/05-Gender-Screen-01.jpg"),
-              fit: BoxFit.cover,
+              image: AssetImage("assets/notifications/notification_sample.png"),
+              fit: BoxFit.fill,
             ),
           ),
         ),
-        Positioned(
-          left: 15,
-          bottom: MediaQuery.of(context).size.height / 2 - 326,
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width - 30,
-            height: 55.0,
-            child: TextButton(
-              child: const Text(''),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HelpHow()),
-                );
-              },
-            ),
-          ),
-        )
       ],
     ));
   }

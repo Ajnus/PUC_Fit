@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:puc_fit/gender01.dart';
-import 'package:puc_fit/gender01.dart';
 import 'package:puc_fit/login02.dart';
 import 'package:puc_fit/main.dart';
 import 'package:puc_fit/splash02.dart';

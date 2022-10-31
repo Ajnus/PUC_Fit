@@ -3,8 +3,8 @@ import 'package:puc_fit/main.dart';
 import 'package:puc_fit/profileScreen.dart';
 import 'package:puc_fit/splash02.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class MessageScreen extends StatelessWidget {
+  const MessageScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +20,7 @@ class ProfileScreen extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-  final String appBarText = 'Profile';
-
+  final String appBarText = 'Messages';
   final String title;
 
   @override
@@ -36,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/09-Profile-Screen-Musc.jpg"),
+                    image: AssetImage("assets/12-Message-Screen.jpg"),
                     fit: BoxFit.fill)))
       ]),
     );

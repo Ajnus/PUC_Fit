@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:puc_fit/main.dart';
+import 'package:puc_fit/messageScreen.dart';
 import 'package:puc_fit/profileScreen.dart';
 import 'package:puc_fit/homeScreen.dart';
+import 'package:puc_fit/notificationScreen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -13,29 +16,42 @@ class MainScreen extends StatelessWidget {
       title: 'PUC Fit',
       theme:
           ThemeData(primarySwatch: Colors.orange, canvasColor: Colors.orange),
-      home: const MyHomePage(title: 'PUC Fit'),
+      home: MyHomePage(title: 'PUC Fit', appBarText: 'void'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
+  MyHomePage({super.key, required this.title, required this.appBarText});
+  final String appBarText;
   final String title;
+  //MyHomePage({Key? key, required this.appBarText}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  File? _image;
+  PickedFile _pickedFile;
+  final _picker = ImagePicker();
+  // Implementing the image picker
+  Future<void> _pickImage() async {
+    if (_pickedFile != null) {
+      setState(() {
+        _image = File(_pickedFile.path);
+      });
+    }
+  }
+
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _pageList = <Widget>[
     HomeScreen(),
-    //NotificationScreen(),
+    NotificationScreen(),
     ProfileScreen(),
-    //MessageScreen(),
+    MessageScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -81,10 +97,10 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white),
           centerTitle: true,
-          title: const Text(
+          title: Text(
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              'Home'),
+              _pageList[_selectedIndex].toString()),
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.search),
@@ -92,6 +108,10 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text('Pesquise aqui a atividade desejada')));
+                showSearch(
+                  context: context,
+                  delegate: MySearchDelegate(),
+                );
               },
             ),
           ]),
@@ -139,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()),
+                MaterialPageRoute(builder: (context) => const MainScreen()),
               );
             },
           ),
@@ -153,7 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()),
+                MaterialPageRoute(builder: (context) => const MainScreen()),
               );
             },
           ),
@@ -167,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()),
+                MaterialPageRoute(builder: (context) => const MainScreen()),
               );
             },
           ),
@@ -181,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()),
+                MaterialPageRoute(builder: (context) => const MainScreen()),
               );
             },
           ),
@@ -195,7 +215,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()),
+                MaterialPageRoute(builder: (context) => const MainScreen()),
               );
             },
           ),
@@ -218,6 +238,64 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.white,
               child: const ListTile(title: Text('Exercícios'))),*/
       ])),
+    );
+  }
+}
+
+class MySearchDelegate extends SearchDelegate {
+  List<String> searchResults = [
+    'Musculação',
+    'Pedalada',
+    'Caminhada',
+    'Corrida',
+    'Surfe'
+  ];
+
+  @override
+  Widget? buildLeading(BuildContext context) => IconButton(
+      icon: const Icon(Icons.arrow_back),
+      onPressed: () => close(context, null));
+
+  @override
+  List<Widget>? buildActions(BuildContext context) => [
+        IconButton(
+          icon: const Icon(Icons.clear),
+          onPressed: () {
+            if (query.isEmpty) {
+              close(context, null);
+            } else {
+              query = '';
+            }
+          },
+        )
+      ];
+
+  @override
+  Widget buildResults(BuildContext context) => Center(
+        child: Text(query,
+            style: const TextStyle(fontSize: 64, fontWeight: FontWeight.bold)),
+      );
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    List<String> suggestions = searchResults.where((searchResult) {
+      final result = searchResult.toLowerCase();
+      final input = query.toLowerCase();
+
+      return result.contains(input);
+      ;
+    }).toList();
+
+    return ListView.builder(
+      itemCount: suggestions.length,
+      itemBuilder: (context, index) {
+        final suggestion = suggestions[index];
+
+        return ListTile(
+          title: Text(suggestion),
+          onTap: () {},
+        );
+      },
     );
   }
 }

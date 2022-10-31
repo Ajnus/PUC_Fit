@@ -5,6 +5,7 @@ import 'package:puc_fit/splash02.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+  final String appBarText = 'Home';
 
   @override
   Widget build(BuildContext context) {

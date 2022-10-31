@@ -45,10 +45,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         Positioned(
           left: 15,
-          bottom: MediaQuery.of(context).size.height / 2 - 330,
+          bottom: 75,
           child: SizedBox(
             width: MediaQuery.of(context).size.width - 30,
-            height: 55.0,
+            height: 49.0,
             child: TextButton(
               child: const Text(''),
               onPressed: () {
