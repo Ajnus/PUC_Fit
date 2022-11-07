@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  File? _image;
+  /*File? _image;
   PickedFile _pickedFile;
   final _picker = ImagePicker();
   // Implementing the image picker
@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
         _image = File(_pickedFile.path);
       });
     }
-  }
+  }*/
 
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
