@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:puc_fit/login01.dart';
 import 'package:puc_fit/login03.dart';
+import 'package:puc_fit/main.dart';
+import 'package:puc_fit/splash02.dart';
 
 class Sign02 extends StatelessWidget {
   const Sign02({super.key});

@@ -4,6 +4,7 @@ import 'package:puc_fit/focus_2.dart';
 import 'package:puc_fit/focus_3.dart';
 import 'package:puc_fit/focus_4.dart';
 import 'package:puc_fit/mainScreen.dart';
+import 'package:puc_fit/main.dart';
 
 class RegistrationFocus extends StatelessWidget {
   const RegistrationFocus({super.key});

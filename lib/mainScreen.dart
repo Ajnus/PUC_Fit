@@ -1,4 +1,3 @@
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:puc_fit/main.dart';
@@ -6,7 +5,6 @@ import 'package:puc_fit/messageScreen.dart';
 import 'package:puc_fit/profileScreen.dart';
 import 'package:puc_fit/homeScreen.dart';
 import 'package:puc_fit/notificationScreen.dart';
-import 'dart:io';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -52,33 +50,14 @@ class _MyHomePageState extends State<MyHomePage> {
   static const List<Widget> _pageList = <Widget>[
     HomeScreen(),
     NotificationScreen(),
+    ProfileScreen(),
     MessageScreen(),
   ];
-  String imageUrl = " ";
 
   void _onItemTapped(int index) {
     setState(() {
       print(index);
       _selectedIndex = index;
-    });
-  }
-
-  void pickUploadImage() async {
-    final image = await ImagePicker().pickImage(
-      source: ImageSource.gallery,
-      maxWidth: 512,
-      maxHeight: 512,
-      imageQuality: 75,
-    );
-
-    Reference ref = FirebaseStorage.instance.ref().child("profilepic.jpg");
-
-    await ref.putFile(File(image!.path));
-    ref.getDownloadURL().then((value) {
-      print(value);
-      setState(() {
-        imageUrl = value;
-      });
     });
   }
 
@@ -119,8 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
           iconTheme: const IconThemeData(color: Colors.white),
           centerTitle: true,
           title: Text(
-              style: const TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.bold),
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               _pageList[_selectedIndex].toString()),
           actions: <Widget>[
             IconButton(
@@ -140,26 +119,13 @@ class _MyHomePageState extends State<MyHomePage> {
           child: ListView(children: [
         DrawerHeader(
           decoration: const BoxDecoration(color: Colors.orange),
-          child: Stack(children: <Widget>[
+          child: Stack(children: const [
             Positioned(
-              left: 85,
-              top: 0,
-              child: imageUrl == " "
-                  ? CircleAvatar(
-                      backgroundColor: Colors.white,
-                      radius: 55.0,
-                      child: IconButton(
-                          color: Colors.black,
-                          padding: const EdgeInsets.all(20),
-                          iconSize: 60,
-                          icon: const Icon(Icons.person),
-                          onPressed: () {
-                            pickUploadImage();
-                          }),
-                    )
-                  : Image.network(imageUrl),
-            ),
-            /*const Positioned(
+                left: 85,
+                top: 0,
+                child:
+                    CircleAvatar(backgroundColor: Colors.white, radius: 55.0)),
+            Positioned(
                 left: 95,
                 top: 27,
                 child: Text(
@@ -167,8 +133,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: Colors.black,
                         //fontWeight: FontWeight.bold,
                         fontSize: 50),
-                    'N U')),*/
-            const Positioned(
+                    'N U')),
+            Positioned(
                 left: 95,
                 top: 115,
                 child: Text(

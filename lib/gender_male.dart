@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:puc_fit/gender_female.dart';
+import 'package:puc_fit/main.dart';
 import 'package:puc_fit/focus_empty.dart';
 
 class GenderScreenMale extends StatelessWidget {
