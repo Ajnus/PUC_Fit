@@ -1,8 +1,8 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:image/image.dart' hide Image;
 import 'package:image_picker/image_picker.dart';
 import 'package:puc_fit/futScreen.dart';
-import 'package:puc_fit/main.dart';
 import 'package:puc_fit/messageScreen.dart';
 import 'package:puc_fit/modalidades.dart';
 import 'package:puc_fit/profileScreen.dart';
@@ -61,6 +61,19 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
   String imageUrl = " ";
 
+  File _resizeImage(String filePath) {
+    final image = decodeImage(File(filePath).readAsBytesSync());
+
+    if (image == null) return File(filePath);
+
+    if (image.width > 50) {
+      final resizedImage = copyResize(image, width: 110, height: 110);
+      File(filePath).writeAsBytesSync(encodePng(resizedImage));
+    }
+
+    return File(filePath);
+  }
+
   void _onItemTapped(int index) {
     setState(() {
       print(index);
@@ -71,14 +84,14 @@ class _MyHomePageState extends State<MyHomePage> {
   void pickUploadImage() async {
     final image = await ImagePicker().pickImage(
       source: ImageSource.gallery,
-      maxWidth: 512,
-      maxHeight: 512,
-      imageQuality: 75,
+      //maxWidth: 10240,
+      //maxHeight: 10240,
+      imageQuality: 25,
     );
 
     Reference ref = FirebaseStorage.instance.ref().child("profilepic.jpg");
 
-    await ref.putFile(File(image!.path));
+    await ref.putFile(_resizeImage(image!.path));
     ref.getDownloadURL().then((value) {
       print(value);
       setState(() {
@@ -162,7 +175,15 @@ class _MyHomePageState extends State<MyHomePage> {
                             pickUploadImage();
                           }),
                     )
-                  : Image.network(imageUrl),
+                  : CircleAvatar(
+                      radius: 55.0,
+                      backgroundImage: NetworkImage(imageUrl),
+                      child: IconButton(
+                          icon: const Icon(null),
+                          onPressed: () {
+                            pickUploadImage();
+                          }),
+                    ),
             ),
             /*const Positioned(
                 left: 95,
