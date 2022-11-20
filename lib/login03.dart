@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:puc_fit/gender.dart';
-import 'package:puc_fit/login02.dart';
-import 'package:puc_fit/main.dart';
-import 'package:puc_fit/splash02.dart';
 import 'package:flutter_login/flutter_login.dart';
-import 'package:flutter/services.dart';
 
 class Login03 extends StatelessWidget {
   const Login03({super.key});

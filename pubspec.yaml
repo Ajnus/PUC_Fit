@@ -39,6 +39,8 @@ dependencies:
   image_picker: ^0.8.6
   flutter_login: ^4.0.0
   file: ^6.1.4
+  firebase_storage: ^11.0.4
+  firebase_core: ^2.1.1
 
 dev_dependencies:
   flutter_launcher_icons: "^0.10.0"
@@ -85,7 +87,10 @@ flutter:
   - assets/09-Profile-Screen-Musc.jpg
   - assets/12-Message-Screen.jpg
   - assets/icon.png
-  
+  #modalidades
+  - assets/_modalidades.png
+  - assets/_musculacao.png
+  - assets/jiu_jitsu.png
   #sexo
   - assets/sexo/sexo.png
   - assets/sexo/sexo_f.png
@@ -100,6 +105,9 @@ flutter:
   - assets/notifications/notification_sample.png
   - assets/notifications/notification_frame.png
   - assets/notifications/notification_theme.png
+  #mensagens
+  - assets/messages/base.png
+  - assets/messages/template.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

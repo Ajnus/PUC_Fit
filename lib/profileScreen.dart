@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:puc_fit/main.dart';
-import 'package:puc_fit/profileScreen.dart';
-import 'package:puc_fit/splash02.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
