@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:puc_fit/main.dart';
 import 'package:puc_fit/sign02.dart';
 import 'package:puc_fit/splash03.dart';
 

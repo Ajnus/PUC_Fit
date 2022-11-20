@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:puc_fit/main.dart';
-import 'package:puc_fit/profileScreen.dart';
-import 'package:puc_fit/splash02.dart';
 
 class MessageScreen extends StatelessWidget {
   const MessageScreen({super.key});

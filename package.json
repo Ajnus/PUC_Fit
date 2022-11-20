@@ -1,0 +1,26 @@
+{
+  "name": "puc_fit",
+  "version": "1.0.0",
+  "description": "puc_fit entering firebase",
+  "main": "main.dart",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomazPassarelli/PUC_Fit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomazPassarelli/PUC_Fit/issues"
+  },
+  "homepage": "https://github.com/ThomazPassarelli/PUC_Fit#readme",
+  "dependencies": {
+    "firebase": "^9.13.0"
+  }
+}

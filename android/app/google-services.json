@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "117122046004",
+    "project_id": "puc-fit",
+    "storage_bucket": "puc-fit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117122046004:android:d154981b5c259ab8195261",
+        "android_client_info": {
+          "package_name": "com.example.puc_fit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117122046004-d0qrd9a6vkcovj5c91454ol8i03fabqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuq6nsxRK_vU68lDbjaxuTq8eXzQzacRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117122046004-d0qrd9a6vkcovj5c91454ol8i03fabqq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "117122046004-rktqgdk23k4i312d7lu99ppv8plkqo4t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pucFit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
