@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:puc_fit/login03.dart';
 import 'package:puc_fit/mainScreen.dart';
 import 'package:puc_fit/sign02.dart';
 import 'package:flutter/services.dart';
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Splash02()),
+                MaterialPageRoute(builder: (context) => const MainScreen()),
               );
             },
           ),

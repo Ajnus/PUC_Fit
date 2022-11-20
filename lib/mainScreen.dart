@@ -1,8 +1,10 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:puc_fit/futScreen.dart';
 import 'package:puc_fit/main.dart';
 import 'package:puc_fit/messageScreen.dart';
+import 'package:puc_fit/modalidades.dart';
 import 'package:puc_fit/profileScreen.dart';
 import 'package:puc_fit/homeScreen.dart';
 import 'package:puc_fit/notificationScreen.dart';
@@ -52,7 +54,10 @@ class _MyHomePageState extends State<MyHomePage> {
   static const List<Widget> _pageList = <Widget>[
     HomeScreen(),
     NotificationScreen(),
+    ProfileScreen(),
     MessageScreen(),
+    ModalidadesScreen(),
+    FutScreen()
   ];
   String imageUrl = " ";
 
@@ -217,11 +222,13 @@ class _MyHomePageState extends State<MyHomePage> {
           top: 125,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-            child: const Text(textAlign: TextAlign.left, 'Exercícios'),
+            child: const Text(textAlign: TextAlign.left, 'Modalidades'),
             onPressed: () {
               Navigator.push(
+                //         currentIndex: _selectedIndex, onItemtapped(?)
                 context,
-                MaterialPageRoute(builder: (context) => const MainScreen()),
+                MaterialPageRoute(
+                    builder: (context) => const ModalidadesScreen()),
               );
             },
           ),
@@ -245,7 +252,69 @@ class _MyHomePageState extends State<MyHomePage> {
           top: 125,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-            child: const Text(textAlign: TextAlign.left, 'Mais'),
+            child: const Text(textAlign: TextAlign.left, 'Rede Social'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MainScreen()),
+              );
+            },
+          ),
+        ),
+        Positioned(
+          left: 45,
+          top: 125,
+          child: TextButton(
+            child: const Text(''),
+            onPressed: () {},
+          ),
+        ),
+        Positioned(
+          left: 45,
+          top: 125,
+          child: TextButton(
+            child: const Text(''),
+            onPressed: () {},
+          ),
+        ),
+        Positioned(
+          left: 45,
+          top: 125,
+          child: TextButton(
+            child: const Text(''),
+            onPressed: () {},
+          ),
+        ),
+        Positioned(
+          left: 45,
+          top: 125,
+          child: TextButton(
+            child: const Text(''),
+            onPressed: () {},
+          ),
+        ),
+        Positioned(
+          left: 45,
+          top: 125,
+          child: TextButton(
+            child: const Text(''),
+            onPressed: () {},
+          ),
+        ),
+        Positioned(
+          left: 45,
+          top: 125,
+          child: TextButton(
+            child: const Text(''),
+            onPressed: () {},
+          ),
+        ),
+        Positioned(
+          left: 45,
+          top: 125,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+            child: const Text(textAlign: TextAlign.left, 'Ajuda'),
             onPressed: () {
               Navigator.push(
                 context,

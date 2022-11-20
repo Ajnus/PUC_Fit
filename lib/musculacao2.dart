@@ -6,11 +6,12 @@ class WorkoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'PUC Fit',
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'PUC Fit'),
     );
   }
 }
@@ -52,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
               size: 40,
             ),*/
             border: const OutlineInputBorder(),
-            labelText: "name${_controllers.length + 1}",
+            labelText: "exercício ${_controllers.length + 1}",
           ),
         );
         setState(() {
@@ -119,9 +120,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "Test app",
       home: Scaffold(
-        appBar: AppBar(title: const Text("Tarefa Flutter")),
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text("Seu Treino"),
+          backgroundColor: Colors.orange,
+        ),
         body: Column(
           children: [
             _addTile(),

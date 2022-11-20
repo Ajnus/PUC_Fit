@@ -88,9 +88,10 @@ flutter:
   - assets/12-Message-Screen.jpg
   - assets/icon.png
   #modalidades
-  - assets/_modalidades.png
-  - assets/_musculacao.png
-  - assets/jiu_jitsu.png
+  - assets/modalidades/_modalidades.png
+  - assets/modalidades/_musculacao.png
+  - assets/modalidades/jiu_jitsu.png
+  - assets/modalidades/fut.png
   #sexo
   - assets/sexo/sexo.png
   - assets/sexo/sexo_f.png

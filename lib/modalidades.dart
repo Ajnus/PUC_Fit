@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-
+import 'futScreen.dart';
 import 'musculacao1.dart';
-
 import 'jiu_jitsu.dart';
+import 'musculacao2.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ModalidadesScreen extends StatelessWidget {
+  const ModalidadesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,17 +38,17 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/_modalidades.png"),
+              image: AssetImage("assets/modalidades/_modalidades.png"),
               fit: BoxFit.fill,
             ),
           ),
         ),
         Positioned(
-          left: MediaQuery.of(context).size.width / 2 - 179,
-          top: MediaQuery.of(context).size.height / 2 - 225,
+          left: MediaQuery.of(context).size.width / 2 - 183,
+          top: 155,
           child: SizedBox(
-            width: 120.0,
-            height: 120.0,
+            width: 118.0,
+            height: 128.0,
             child: TextButton(
               child: const Text(''),
               onPressed: () {
@@ -66,11 +62,28 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         Positioned(
-          left: MediaQuery.of(context).size.width / 2 - 180,
-          top: MediaQuery.of(context).size.height / 2 - -165,
+          left: MediaQuery.of(context).size.width / 2 - 49,
+          top: MediaQuery.of(context).size.height / 2 - 96,
           child: SizedBox(
-            width: 115.0,
-            height: 115.0,
+            width: 118.0,
+            height: 128.0,
+            child: TextButton(
+              child: const Text(''),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FutScreen()),
+                );
+              },
+            ),
+          ),
+        ),
+        Positioned(
+          left: MediaQuery.of(context).size.width / 2 - 183,
+          bottom: 76,
+          child: SizedBox(
+            width: 118.0,
+            height: 128.0,
             child: TextButton(
               child: const Text(''),
               onPressed: () {
