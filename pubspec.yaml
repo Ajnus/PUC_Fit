@@ -88,6 +88,7 @@ flutter:
   - assets/09-Profile-Screen-Musc.jpg
   - assets/12-Message-Screen.jpg
   - assets/icon.png
+  - assets/perfil.png
   #modalidades
   - assets/modalidades/_modalidades.png
   - assets/modalidades/_musculacao.png
