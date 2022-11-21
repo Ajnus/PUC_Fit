@@ -3,6 +3,7 @@ import 'futScreen.dart';
 import 'musculacao1.dart';
 import 'jiu_jitsu.dart';
 import 'musculacao2.dart';
+import 'surf.dart';
 
 class ModalidadesScreen extends StatelessWidget {
   const ModalidadesScreen({super.key});
@@ -94,7 +95,24 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
           ),
-        )
+        ),
+        Positioned(
+          left: MediaQuery.of(context).size.width / 2 - 60,
+          top: MediaQuery.of(context).size.height / 2 - 266,
+          child: SizedBox(
+            width: 118.0,
+            height: 128.0,
+            child: TextButton(
+              child: const Text('surf'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SurfScreen()),
+                );
+              },
+            ),
+          ),
+        ),
       ],
     ));
   }
