@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'musculacao2.dart';
 
-class SurftScreen extends StatelessWidget {
-  const SurftScreen({super.key});
+class SurfScreen extends StatelessWidget {
+  const SurfScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
