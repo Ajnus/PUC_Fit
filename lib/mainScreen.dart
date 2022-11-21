@@ -6,6 +6,7 @@ import 'package:puc_fit/futScreen.dart';
 import 'package:puc_fit/messageScreen.dart';
 import 'package:puc_fit/modalidades.dart';
 import 'package:puc_fit/profileScreen.dart';
+import 'package:puc_fit/profiles.dart';
 import 'package:puc_fit/homeScreen.dart';
 import 'package:puc_fit/notificationScreen.dart';
 import 'dart:io';
@@ -219,7 +220,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const MainScreen()),
+                MaterialPageRoute(builder: (context) => const ProfilesScreen()),
               );
             },
           ),
