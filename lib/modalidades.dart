@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:puc_fit/natacao.dart';
 import 'futScreen.dart';
 import 'musculacao1.dart';
 import 'jiu_jitsu.dart';
@@ -97,13 +98,31 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         Positioned(
-          left: MediaQuery.of(context).size.width / 2 - 60,
-          top: MediaQuery.of(context).size.height / 2 - 266,
+          left: MediaQuery.of(context).size.width / 2 - 49,
+          top: 155,
           child: SizedBox(
             width: 118.0,
             height: 128.0,
             child: TextButton(
-              child: const Text('surf'),
+              child: const Text(''),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const NatacaoScreen()),
+                );
+              },
+            ),
+          ),
+        ),
+        Positioned(
+          left: MediaQuery.of(context).size.width / 2 - 49 + 134,
+          top: 155,
+          child: SizedBox(
+            width: 118.0,
+            height: 128.0,
+            child: TextButton(
+              child: const Text(''),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -112,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
           ),
-        ),
+        )
       ],
     ));
   }

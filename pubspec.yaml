@@ -95,6 +95,7 @@ flutter:
   - assets/modalidades/jiu_jitsu.png
   - assets/modalidades/fut.png
   - assets/modalidades/surf.png
+  - assets/modalidades/natacao.png
   #sexo
   - assets/sexo/sexo.png
   - assets/sexo/sexo_f.png

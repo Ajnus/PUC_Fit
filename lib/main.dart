@@ -11,6 +11,12 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+    /* Replace with actual values
+      options: const FirebaseOptions(
+    apiKey: "AIzaSyAvOHnn7SjYnISkjzJl9-WYbLUwd_naNXk",
+    appId: "1:117122046004:android:d154981b5c259ab8195261",
+    messagingSenderId: "117122046004",
+    projectId: "117122046004",*/
   );
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
